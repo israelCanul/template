@@ -1,0 +1,131 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.main {
+  margin: 0px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+.loadsection {
+  padding: 5px;
+  background: rgb(0, 70, 127);
+  margin-bottom: 10px;
+}
+button {
+  color: white;
+  font-weight: 500;
+  background: rgb(0, 70, 127);
+  border: 0px solid transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.datos {
+  overflow: hidden;
+}
+#items td {
+  font-size: 12px;
+}
+.title.datos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.title.datos h3 {
+  flex: 1;
+  width: 100%;
+}
+tr {
+  margin-bottom: 5px;
+}
+
+.linkPerfil {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(0, 70, 127);
+  line-height: 35px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  tr:nth-child(odd) {
+    background: #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+  Label the data
+You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+  */
+  td:nth-of-type(1):before {
+    content: "Nombre";
+  }
+  td:nth-of-type(2):before {
+    content: "Puesto";
+  }
+  td:nth-of-type(3):before {
+    content: "Teléfono";
+  }
+  td:nth-of-type(4):before {
+    content: "Extención";
+  }
+  td:nth-of-type(5):before {
+    content: "Resort";
+  }
+  td:nth-of-type(6):before {
+    content: "Email";
+  }
+  td:nth-of-type(7):before {
+    content: "Image";
+  }
+  td:nth-of-type(8):before {
+    content: "Token";
+  }
+}

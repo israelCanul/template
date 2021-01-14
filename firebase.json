@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "vcard-perfil",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

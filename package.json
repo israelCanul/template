@@ -1,0 +1,29 @@
+{
+  "name": "vcardproject",
+  "version": "1.0.0",
+  "description": "vcard project",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "vcards-js": "^2.10.0",
+    "vcf": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "prod": "webpack"
+  },
+  "author": "Israel Iran Canul Chi",
+  "license": "ISC"
+}

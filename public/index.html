@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vCard Admin</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/indexAdmin.css" />
+  </head>
+  <body>
+    <h2>Update Data</h2>
+    <div class="main">
+      <div class="loadsection">
+        <form enctype="multipart/form-data">
+          <input id="upload" type="file" name="files[]" />
+        </form>
+      </div>
+      <div class="title datos">
+        <h3>Data from File</h3>
+        <!-- <button id="loadData">Update DB</button> -->
+      </div>
+      <!-- <pre id="example"></pre> -->
+      <table class="datos">
+        <thead role="rowgroup">
+          <tr>
+            <td>Nombre</td>
+            <td>Puesto</td>
+            <td>Teléfono</td>
+            <td>Extención</td>
+            <td>Resort</td>
+            <td>Email</td>
+            <td>Image</td>
+            <td>Token</td>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+      </table>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+    <script></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+
+    <script src="js/indexAdmin.js"></script>
+  </body>
+</html>
