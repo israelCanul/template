@@ -73,6 +73,35 @@ class Card {
         item.innerText = "Royal Resorts Anfitrion";
       }
     });
+    var resort = document.querySelectorAll(".resort");
+    Object.keys(resort).map(function (id) {
+      let item = resort[id];
+      if (that.props.resort) {
+        item.innerText = that.props.resort;
+        var iframe = `<iframe
+                        width="100%"
+                        height="400"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=${that.props.resort}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      ></iframe>`;
+        document.querySelector("#mapaContainer").innerHTML = iframe;
+      } else {
+        item.innerText = "Royal Sands";
+        var iframe = `<iframe
+                        width="100%"
+                        height="400"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Royal Sands&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      ></iframe>`;
+        document.querySelector("#mapaContainer").innerHTML = iframe;
+      }
+    });
   }
   createContactBtn() {
     var linkContact = document.createElement("a");
@@ -189,6 +218,7 @@ window.onload = function () {
       var vcard = new Card({
         name: person.Nombre,
         lastName: "",
+        resort: person.Resort,
         email: person.email,
         phone: person["Teléfono"],
         workEmail: person.email,
