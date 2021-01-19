@@ -1,7 +1,7 @@
 var path = require("path");
 
 module.exports = {
-  entry: { index: "./index.js" },
+  entry: { index: "./index.js", getqr: "./getQR.js" },
   module: {
     rules: [
       {

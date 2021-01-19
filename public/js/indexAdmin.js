@@ -93,7 +93,11 @@ $(function (e) {
                         window.location.origin +
                         "/anfitrion.html?token=" +
                         item.token +
-                        "'>Ver Perfil</a></td>"
+                        "'>Ver Perfil</a><a style='margin-left:5px' class='linkPerfil' target='_blank' href='" +
+                        window.location.origin +
+                        "/QRgenerator.html?token=" +
+                        item.token +
+                        "'>QR</a></td>"
                       : ""
                   }
               </tr>
