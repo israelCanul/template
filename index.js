@@ -121,7 +121,7 @@ class Card {
     fooBar.addPhone(this.props.phone, vCard.Type.HOME);
     fooBar.addPhone(this.props.workPhone, vCard.Type.WORK);
 
-    var link = vCard.export(fooBar, "vCard", false); // use parameter true to force download
+    var link = vCard.export(fooBar, "Download Contact", false); // use parameter true to force download
     link.className = "lnk";
     link.setAttribute(
       "download",
@@ -215,6 +215,7 @@ window.onload = function () {
     .then((snapshot) => {
       console.log(snapshot.val());
       var person = snapshot.val();
+      console.log(person);
       var vcard = new Card({
         name: person.Nombre,
         lastName: "",
@@ -223,6 +224,7 @@ window.onload = function () {
         phone: person["Teléfono"],
         workEmail: person.email,
         workPhone: person["Teléfono"],
+        whatsapp: person.WhatsApp ? person.WhatsApp : "",
         avatar: person.foto
           ? person.foto
           : "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
