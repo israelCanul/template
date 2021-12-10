@@ -48,7 +48,8 @@ $(function (e) {
           var newItems = {};
           Object.keys(items).map(function (id) {
             var item = items[id];
-            var tokenNew = generateId(20);
+            // var tokenNew = generateId(20);
+            var tokenNew = item["token"];
             newItems[tokenNew] = { ...item, token: tokenNew };
             // newItems.push({...item, token: generateId(20) + "gtk" + id });
           });

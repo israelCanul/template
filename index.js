@@ -17,6 +17,7 @@ class Card {
 
   fillFields() {
     let that = this;
+    console.log(that.props);
     var names = document.querySelectorAll(".fullName");
     Object.keys(names).map(function (id) {
       let item = names[id];
@@ -27,6 +28,13 @@ class Card {
       let item = phone[id];
       item.innerText = that.props.workPhone;
       item.setAttribute("href", "tel:" + that.props.workPhone);
+      if (that.props.extension) {
+        item.innerText = that.props.workPhone + " Ext. " + that.props.extension;
+        item.setAttribute(
+          "href",
+          "tel:" + that.props.workPhone + "," + that.props.extension
+        );
+      }
     });
     var email = document.querySelectorAll(".workEmail");
     Object.keys(email).map(function (id) {
@@ -41,8 +49,22 @@ class Card {
     Object.keys(phone).map(function (id) {
       let item = phone[id];
       item.innerText = that.props.phone;
+
       item.setAttribute("href", "tel:" + that.props.phone);
     });
+    if (that.props.whatsapp) {
+      var whats = document.querySelectorAll(".whatsPhone");
+      Object.keys(whats).map(function (id) {
+        let item = whats[id];
+        item.innerHTML =
+          '<img style="width: 18px; margin-right: 5px" src="/images/whatsapp.png" alt=""/>' +
+          that.props.whatsapp;
+        item.setAttribute("href", "https://wa.me/" + that.props.whatsapp);
+      });
+    } else {
+      document.querySelector(".whatsPhone").style.display = "none";
+    }
+
     var email = document.querySelectorAll(".email");
     Object.keys(email).map(function (id) {
       let item = email[id];
@@ -222,9 +244,10 @@ window.onload = function () {
         resort: person.Resort,
         email: person.email,
         phone: person["Teléfono"],
+        extension: person["Extensión"] ? person["Extensión"] : null,
         workEmail: person.email,
         workPhone: person["Teléfono"],
-        whatsapp: person.WhatsApp ? person.WhatsApp : "",
+        whatsapp: person.Whatsapp ? person.Whatsapp : null,
         avatar: person.foto
           ? person.foto
           : "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
